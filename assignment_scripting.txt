@@ -1,0 +1,194 @@
+Q.2
+
+swati@DESKTOP-ONU8RDV:~/assi_linux$ vim even_odd.txt
+#!/bin/bash
+echo "enter the given niumber is "
+read num
+a=`expr $num % 2`
+if [ $a -eq 0 ]
+then
+        echo " $num is even number"
+else
+        echo "$num is odd number"
+fi
+swati@DESKTOP-ONU8RDV:~/assi_linux$ bash even_odd.txt
+______________________________________________________________________
+enter the given niumber is
+5
+5 is odd number
+
+
+
+**********************************************************************
+Q.3
+
+swati@DESKTOP-ONU8RDV:~/assi_linux$ vim deci_bin.sh
+#!/bin/bash
+echo "Enter any decimal no:"
+read dec_no
+bin_no=" "
+while [ $dec_no -gt 0 ]
+do
+        rem=`expr $dec_no % 2 `
+        bin_no=$rem$bin_no
+        dec_no=`expr $dec_no / 2 `
+done
+echo "$bin_no"
+swati@DESKTOP-ONU8RDV:~/assi_linux$ bash deci_bin.sh
+_____________________________________________________________________________
+Enter any decimal no:
+4
+100
+************************************************************************
+Q4  Write a script to swap 2 numbers using intermediate variable. 
+
+swati@DESKTOP-ONU8RDV:~/assi_linux$ vim swap.sh
+
+#!/bin/bash
+echo "number before swating are:"
+echo "enter the first number"
+read a
+echo "enter the second number"
+read b
+temp=$a
+a=$b
+b=$temp
+echo " numbers after swaping are:a=$a b=$b"
+swati@DESKTOP-ONU8RDV:~/assi_linux$ bash swap.sh
+********************************************************************************************
+Q5 Write a script to swap 2 numbers without using intermediate variable. 
+swati@DESKTOP-ONU8RDV:~/assi_linux$ vim swap_wt.sh
+#!/bin /bash
+echo "enter the first number"
+read a
+echo "enter the second number"
+read b
+a=$((a+b))
+b=$((a-b))
+a=$((a-b))
+echo $a $b
+~         
+swati@DESKTOP-ONU8RDV:~/assi_linux$ bash swap_wt.sh
+enter the first number
+15
+enter the second number
+5
+5 15
+_____________________________________________________________________________
+number before swating are:
+enter the first number
+15
+enter the second number
+20
+ numbers after swaping are:a= 20  and b=15
+
+*****************************************************************************
+Q6
+swati@DESKTOP-ONU8RDV:~/assi_linux$ vim reverse.sh
+#!/bin/bash
+echo "enter the number"
+read num
+rev_no=0
+while [ $num -gt 0 ]
+do
+        unit=`expr $((num % 10))`
+        rev_no=`expr $((rev_no*10 + unit))`
+        num=$((num / 10))
+done
+echo "$rev_no"
+swati@DESKTOP-ONU8RDV:~/assi_linux$ bash reverse.sh
+_______________________________________________________________________
+enter the number
+123
+321
+
+********************************************************************
+Q.7
+swati@DESKTOP-ONU8RDV:~/assi_linux$ vim mult_tab.sh
+
+#!/bin/bash
+echo " enter the number "
+read num
+echo " multiplication table of $num"
+i=1
+while [ $i -le 10 ]
+do
+        mult_tab=$(( $num * $i))
+echo "$num*$i = $mult_tab"
+i=$(( $i + 1 ))
+done
+swati@DESKTOP-ONU8RDV:~/assi_linux$ bash mult_tab.sh
+
+______________________________________________________________
+ enter the number
+2
+ multiplication table of 2
+2*1 = 2
+2*2 = 4
+2*3 = 6
+2*4 = 8
+2*5 = 10
+2*6 = 12
+2*7 = 14
+2*8 = 16
+2*9 = 18
+2*10 = 20
+
+********************************************************************************
+
+
+Q.8
+swati@DESKTOP-ONU8RDV:~/assi_linux$ vim leap.sh
+#!/bin/bash
+echo "Enter the year"
+read year
+if [[ `expr $year % 100` == 0 && `expr $year % 400` == 0 ]]
+then    echo
+        echo "Given year is leap year"
+elif [[ `expr $year % 100` != 0 && `expr $year % 4` == 0 ]]
+then
+        echo " Given year is leap year"
+else
+        echo "Given year is not year"
+fi      
+swati@DESKTOP-ONU8RDV:~/assi_linux$ bash leap.sh
+____________________________________________________
+Enter the year
+2004
+ Given year is leap year
+_______________________________________________________
+swati@DESKTOP-ONU8RDV:~/assi_linux$ bash leap.sh
+Enter the year
+2005
+Given year is not year
+
+*******************************************************************
+
+Q.9
+swati@DESKTOP-ONU8RDV:~/assi_linux$ vim num_pattern.sh
+#!/bin/bash
+echo "enter the value of number"
+read n
+echo "Number pattern is:"
+k=1
+for ((i=1; i<=n; i++))
+do
+        for ((j=1; j<=i; j++))
+        do
+                echo -n "$k   "       # keep space between two numbers   -n for continuing on same line
+                k=$(($k+1))
+        done
+        echo -e " "			# going to new line
+done 
+swati@DESKTOP-ONU8RDV:~/assi_linux$ bash num_pattern.sh
+___________________________________________________________________________________________
+enter the value of number
+4
+Number pattern is:
+1
+2  3
+4  5  6
+7  8  9  10
+******************************************************************************************
+
+Q.8
